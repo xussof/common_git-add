@@ -1,0 +1,8 @@
+#byxussofupdate find for a better solution than shell
+- name: Git add changes to {{ item.value.repo_git_branch|default('master') }} branch on {{ item.value.repo_name }} repository
+  shell: 'git add . --all'
+  args:
+    chdir: "{{ git_chdir }}"
+  #byxussof make a fail when != Your branch is up to date with
+  ignore_errors: true
+#  when: with_commits == true

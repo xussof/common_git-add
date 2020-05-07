@@ -1,0 +1,7 @@
+#EXAMPLE how to use it. DON'T UNCOMMENT
+#byxussof work to execute using dict
+#- name: Git push for {{ ansible_ansibleplaybooks_configgenerator }}
+#  include_role:
+#    name: common/git-tasks/git-add-commit-push
+#  vars:
+#    git_chdir: "/{{ host_root_dir }}/{{ repos_dir }}/{{ gitlab_git_name }}"
