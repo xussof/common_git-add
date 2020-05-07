@@ -1,7 +1,8 @@
 #EXAMPLE how to use it. DON'T UNCOMMENT
-#byxussof work to execute using dict
-#- name: Git push for {{ ansible_ansibleplaybooks_configgenerator }}
+#- name: Git add
 #  include_role:
-#    name: common/git-tasks/git-add-commit-push
+#    name: xussof.common_git-add
 #  vars:
-#    git_chdir: "/{{ host_root_dir }}/{{ repos_dir }}/{{ gitlab_git_name }}"
+#    git_chdir: "/{{ host_root_dir }}/{{ repos_dir }}/{{ item.value.repo_git_name }}/{{ item.value.repo_project }}{{ item.value.repo_name }}"
+#    git_branch: "{{ item.value.repo_git_branch|default('master') }}"
+#    git_repo_name: "{{ item.value.repo_name }}"
