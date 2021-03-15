@@ -1,5 +1,4 @@
 common_git-add
-
 =========
 
 This role will add modified files inside a git repo.
@@ -14,7 +13,7 @@ Role Variables
 #EXAMPLE how to use it. DON'T UNCOMMENT
 - name: Git add
   include_role:
-    name: xussof.common_git-add
+    name: common_git-add
   vars:
     git_chdir: "/{{ host_root_dir }}/{{ repos_dir }}/{{ item.value.repo_git_name }}/{{ item.value.repo_project }}{{ item.value.repo_name }}"
     git_branch: "{{ item.value.repo_git_branch|default('master') }}"
@@ -34,7 +33,10 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - xussof.common_git-add
+         - common_git-add
+
+TODO:
+Working only with ssh not https yet
 
 License
 -------
@@ -43,4 +45,4 @@ BSD
 
 Author Information
 ------------------
-Made by @xussof
+Made by @sergi-canas
